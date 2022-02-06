@@ -16,6 +16,12 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@route-page/*": ["src/app/route-pages/*"],
+      "@shared/*": ["src/shared/*"],
+      "@shared-typescript/*": ["src/shared/typescript/*"]
+    },
     "lib": [
       "es2018",
       "dom"

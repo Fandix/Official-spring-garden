@@ -1,0 +1,37 @@
+<ul class="slideshow">
+    <li> <span>Slide Two</span> </li>
+    <li> <span>Slide Three</span> </li>
+    <li> <span>Slide Four</span> </li>
+    <li> <span>Slide Four</span> </li>
+</ul>
+
+<div class="warp">
+    <div class="title-content">
+        <div class="title">Spring Garden</div>
+        <div class="detail" fxLayout="column" fxLayoutAlign="center center">
+            <span>Picnic Ground</span>
+            <span class="global-margin-top">苗栗縣苗栗市嘉新里五谷路28號</span>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-stroked-button>取得報價</button>
+        </div>
+    </div>
+
+    <div class="news-content">
+        <div class="news-title">News</div>
+        <div class="news" fxLayout="row" fxLayoutAlign="space-between center">
+            <ng-container *ngFor="let new of newsList">
+                <div class="new" >
+                    <img [src]=new.img>
+                    <div class="post-date global-margin-left global-margin-top" fxLayout="row" fxLayoutAlign="start center">
+                        <span>張貼日期: </span>
+                        <span>{{new.date}}</span>
+                    </div>
+                    <div class="content global-margin-left global-margin-top">
+                        {{new.content}}
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
