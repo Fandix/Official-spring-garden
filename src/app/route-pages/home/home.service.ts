@@ -17,4 +17,14 @@ export class HomeService {
       { id: 5, img: '../../../assets/img/news/news-06.jpeg', date: '2021/5/17', content: '因為新冠肺炎疫情影響、所以暫停開放入園服務、等疫情穩定在通知開園時間、謝謝' },
     ])
   }
+
+  getPhotoList() {
+    return Promise.resolve([
+      { cols: 2, rows: 2, color: 'lightblue', img: '../../../assets/img/photoAlbum/photo-01.jpeg' },
+      { cols: 1, rows: 1, color: 'lightgreen', img: '../../../assets/img/photoAlbum/photo-02.jpeg' },
+      { cols: 1, rows: 1, color: 'lightpink', img: '../../../assets/img/photoAlbum/photo-03.jpeg' },
+      { cols: 1, rows: 1, color: '#DDBDF1', img: '../../../assets/img/photoAlbum/photo-04.jpeg' },
+      { cols: 1, rows: 1, color: '#DDBDF1', img: '../../../assets/img/photoAlbum/photo-05.jpeg' },
+    ])
+  }
 }

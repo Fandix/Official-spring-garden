@@ -1,0 +1,13 @@
+$color: #88b06a;
+$hoverColor: #5a7544;
+
+.wrap {
+  margin-top: 50px;
+  width: 100%;
+  height: 70px;
+  background-color: $color;
+  color: white;
+  .point {
+    color: white;
+  }
+}

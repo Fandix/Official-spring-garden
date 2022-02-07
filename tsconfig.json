@@ -20,7 +20,7 @@
       "@app/*": ["src/app/*"],
       "@route-page/*": ["src/app/route-pages/*"],
       "@shared/*": ["src/shared/*"],
-      "@shared-typescript/*": ["src/shared/typescript/*"]
+      "@shared-component/*": ["src/shared/component/*"]
     },
     "lib": [
       "es2018",
