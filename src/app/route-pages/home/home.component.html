@@ -20,9 +20,9 @@
   <div class="news-content">
     <div class="sub-title">News</div>
     <div class="news" fxLayout="row" fxLayoutAlign="space-between center">
-      <ng-container *ngFor="let new of newsList">
+      <ng-container *ngFor="let new of newsList; let i = index">
         <div class="new">
-          <img [src]=new.img>
+          <img [src]=new.img (click)="openNewsDialog(i)">
           <div class="post-date global-margin-left global-margin-top" fxLayout="row" fxLayoutAlign="start center">
             <span>張貼日期: </span>
             <span>{{new.date}}</span>
@@ -38,8 +38,8 @@
   <div class="photo-content">
     <div class="sub-title">Photo Album</div>
     <mat-grid-list cols="4" rowHeight="300px">
-      <mat-grid-tile *ngFor="let photo of photoGridList; last as isLast" [colspan]="photo.cols" [rowspan]="photo.rows">
-        <img class="photo-img" [src]="photo.img" alt="">
+      <mat-grid-tile *ngFor="let photo of photoGridList; last as isLast; let i = index" [colspan]="photo.cols" [rowspan]="photo.rows">
+        <img class="photo-img" [src]="photo.img" alt="" (click)="openPhotoDialog(i)">
         <button mat-stroked-button class="photo-readmore" *ngIf="isLast" (click)="onShowMorePhotoClicked()">Show
           More...</button>
       </mat-grid-tile>

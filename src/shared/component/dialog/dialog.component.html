@@ -1,0 +1,13 @@
+<div [ngClass]="{ photoWrap: data.action === 'photo-dialog', newsWrap: data.action === 'news-dialog' }">
+    <div fxLayout="row" fxLayoutAlign="end center" >
+        <div class="close-btn" (click)="onDialogClose()">X</div>
+    </div>
+    <ng-container *ngIf="data.action === 'photo-dialog'; else newsContent">
+        <div class="photo-wrap">
+            <img [src]="data.imgUrl">
+        </div>
+    </ng-container>
+    <ng-template #newsContent>
+        <div>news</div>
+    </ng-template>
+</div>

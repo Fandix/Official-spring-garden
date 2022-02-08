@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { HomeService } from "./home.service";
 import { Router } from '@angular/router';
-
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '@shared-component/dialog/dialog.component'
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   newsList: any[] = [];
   photoGridList: any[] = [];
-  constructor(private homeService: HomeService, private route: Router) {}
+  constructor(private homeService: HomeService, private route: Router, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.homeService
@@ -25,5 +26,26 @@ export class HomeComponent implements OnInit {
 
   onShowMorePhotoClicked() {
     this.route.navigate(['/phote-album']);
+  }
+
+  openPhotoDialog(index: number) {
+    const imgUrl = this.photoGridList[index].img;    
+    this.dialog.open(DialogComponent, {
+      data: {
+        action: 'photo-dialog',
+        imgUrl: imgUrl,
+      },
+    });
+  }
+
+  openNewsDialog(index: number) {
+    const news = this.newsList[index];
+    
+    this.dialog.open(DialogComponent, {
+      data: {
+        action: 'news-dialog',
+        ...news
+      },
+    });
   }
 }

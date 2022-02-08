@@ -1,0 +1,26 @@
+.photoWrap {
+    width: 700px;
+    height: 700px;
+}
+
+.newsWrap {
+    width: 1200px;
+    height: 700px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.photo-wrap {
+    margin-top: 20px !important;
+    width: 85%;
+    height: 90%;
+    background-color: bisque;
+    margin: auto;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
