@@ -1,0 +1,27 @@
+<mat-grid-list cols="4" rowHeight="33.33vh">
+    <mat-grid-tile *ngFor="let layout of frontPageLayout; let i = index" [colspan]="layout.cols" [rowspan]="layout.rows">
+        <div class="grid-item" fxLayout="row" fxLayoutAlign="center center">
+            <ng-container [ngSwitch]="i">
+                <div class="menu-content" *ngSwitchCase="0" [style.background-image]="'url('+ layout.img +')'">
+                    <div class="header-bar" fxLayout="row" fxLayoutAlign="space-evenly center">
+                        <a routerLink="/" routerLinkActive="active">Home</a>
+                        <a routerLink="/phote-album" routerLinkActive="active">Phote Album</a>
+                        <a routerLink="/phote-album" routerLinkActive="active">Service Menu</a>
+                        <a routerLink="/phote-album" routerLinkActive="active">Products</a>
+                    </div>
+                </div>
+                <div class="full-color-content" *ngSwitchCase="1" fxLayout="column" fxLayoutAlign="center center">
+                    <div class="sub-title">Spring Garden</div>
+                    <div class="global-margin-top sub-content">Picnic Ground</div>
+                    <div class="global-margin-top sub-content">No. 28號, Wugu Rd, Miaoli City</div>
+                </div>
+                <div class="full-color-content" *ngSwitchCase="5" fxLayout="row" fxLayoutAlign="center center">
+                    <span class="sub-content">Experience the good country life</span>
+                </div>
+                <div *ngSwitchDefault class="photo-content">
+                    <img [src]="layout.img" alt="img">
+                </div>
+            </ng-container>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

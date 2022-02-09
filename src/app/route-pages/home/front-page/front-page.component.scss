@@ -1,0 +1,80 @@
+@import url("../../../../shared/scss/_global.scss");
+$color: #88b06a;
+$hoverColor: #5a7544;
+$font: Comic Sans MS;
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+  .menu-content {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    .header-bar {
+      width: 80%;
+      height: 100px;
+      margin: 0 auto;
+      margin-top: 60px;
+      a {
+        text-decoration: none;
+        font-size: 24px;
+        color: white;
+        font-family: $font;
+        font-weight: 500;
+        position: relative;
+      }
+      a::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -8px;
+        height: 0;
+        border-bottom: 5px solid #fff;
+        transition: .5s;
+      }
+      a:hover::after {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+  .full-color-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $color, $alpha: .4);
+    .sub-title {
+      font-size: 50px;
+      font-weight: 600;
+      font-family: $font;
+      color: white;
+    }
+    .sub-content {
+      font-size: 20px;
+      color: white;
+      font-family: $font;
+    }
+  }
+  .photo-content {
+    width: 100%;
+    height: 100%;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+  }
+}
+
+mat-grid-tile {
+  transition: .5s ease;
+}
+
+:not(:first-child):hover {
+  opacity: .5;
+}
